@@ -113,8 +113,8 @@ class NavigationActivity : AppCompatActivity() {
         val act = this
         // Add custom view binders
         binding.navigationView.customizeViewBinders {
-            infoPanelEndNavigationButtonBinder =
-                CustomInfoPanelEndNavButtonBinder(act)
+            infoPanelEndNavigationButtonBinder = null
+                //CustomInfoPanelEndNavButtonBinder(act)
         }
 
         MapboxNavigationApp.current()?.registerBannerInstructionsObserver(this.bannerInstructionObserver)
