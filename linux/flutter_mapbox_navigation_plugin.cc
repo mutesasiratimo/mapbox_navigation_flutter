@@ -6,9 +6,11 @@
 
 #include <cstring>
 
+#include "flutter_mapbox_navigation_plugin_private.h"
+
 #define FLUTTER_MAPBOX_NAVIGATION_PLUGIN(obj) \
   (G_TYPE_CHECK_INSTANCE_CAST((obj), flutter_mapbox_navigation_plugin_get_type(), \
-                              FlutterMapboxNavigationPlugin))
+                             FlutterMapboxNavigationPlugin))
 
 struct _FlutterMapboxNavigationPlugin {
   GObject parent_instance;
@@ -21,20 +23,19 @@ static void flutter_mapbox_navigation_plugin_handle_method_call(
     FlutterMapboxNavigationPlugin* self,
     FlMethodCall* method_call) {
   g_autoptr(FlMethodResponse) response = nullptr;
-
   const gchar* method = fl_method_call_get_name(method_call);
 
   if (strcmp(method, "getPlatformVersion") == 0) {
     struct utsname uname_data = {};
     uname(&uname_data);
-    g_autofree gchar *version = g_strdup_printf("Linux %s", uname_data.version);
+    g_autofree gchar *version = g_strdup_printf("Linux %s", uname_data.release);
     g_autoptr(FlValue) result = fl_value_new_string(version);
     response = FL_METHOD_RESPONSE(fl_method_success_response_new(result));
   } else {
     response = FL_METHOD_RESPONSE(fl_method_not_implemented_response_new());
   }
 
-  fl_method_call_respond(method_call, response, nullptr);
+  fl_method_call_respond(method_call, response);
 }
 
 static void flutter_mapbox_navigation_plugin_dispose(GObject* object) {
@@ -48,7 +49,7 @@ static void flutter_mapbox_navigation_plugin_class_init(FlutterMapboxNavigationP
 static void flutter_mapbox_navigation_plugin_init(FlutterMapboxNavigationPlugin* self) {}
 
 static void method_call_cb(FlMethodChannel* channel, FlMethodCall* method_call,
-                           gpointer user_data) {
+                          FlMethodResult* result, gpointer user_data) {
   FlutterMapboxNavigationPlugin* plugin = FLUTTER_MAPBOX_NAVIGATION_PLUGIN(user_data);
   flutter_mapbox_navigation_plugin_handle_method_call(plugin, method_call);
 }
@@ -60,11 +61,11 @@ void flutter_mapbox_navigation_plugin_register_with_registrar(FlPluginRegistrar*
   g_autoptr(FlStandardMethodCodec) codec = fl_standard_method_codec_new();
   g_autoptr(FlMethodChannel) channel =
       fl_method_channel_new(fl_plugin_registrar_get_messenger(registrar),
-                            "flutter_mapbox_navigation",
-                            FL_METHOD_CODEC(codec));
+                           "flutter_mapbox_navigation",
+                           FL_METHOD_CODEC(codec));
   fl_method_channel_set_method_call_handler(channel, method_call_cb,
-                                            g_object_ref(plugin),
-                                            g_object_unref);
+                                          g_object_ref(plugin),
+                                          g_object_unref);
 
   g_object_unref(plugin);
 }

@@ -1,23 +1,33 @@
-#include "flutter_mapbox_navigation_plugin.h"
-
-// This must be included before many other Windows headers.
-#include <windows.h>
-
-// For getPlatformVersion; remove unless needed for your plugin implementation.
-#include <VersionHelpers.h>
+#include "include/flutter_mapbox_navigation/flutter_mapbox_navigation_plugin.h"
 
 #include <flutter/method_channel.h>
 #include <flutter/plugin_registrar_windows.h>
 #include <flutter/standard_method_codec.h>
+#include <windows.h>
 
 #include <memory>
-#include <sstream>
+#include <string>
 
-namespace flutter_mapbox_navigation {
+namespace {
+
+class FlutterMapboxNavigationPlugin : public flutter::Plugin {
+ public:
+  static void RegisterWithRegistrar(flutter::PluginRegistrarWindows* registrar);
+
+  FlutterMapboxNavigationPlugin();
+
+  virtual ~FlutterMapboxNavigationPlugin();
+
+ private:
+  // Called when a method is called on this plugin's channel from Dart.
+  void HandleMethodCall(
+      const flutter::MethodCall<flutter::EncodableValue>& method_call,
+      std::unique_ptr<flutter::MethodResult<flutter::EncodableValue>> result);
+};
 
 // static
 void FlutterMapboxNavigationPlugin::RegisterWithRegistrar(
-    flutter::PluginRegistrarWindows *registrar) {
+    flutter::PluginRegistrarWindows* registrar) {
   auto channel =
       std::make_unique<flutter::MethodChannel<flutter::EncodableValue>>(
           registrar->messenger(), "flutter_mapbox_navigation",
@@ -26,7 +36,7 @@ void FlutterMapboxNavigationPlugin::RegisterWithRegistrar(
   auto plugin = std::make_unique<FlutterMapboxNavigationPlugin>();
 
   channel->SetMethodCallHandler(
-      [plugin_pointer = plugin.get()](const auto &call, auto result) {
+      [plugin_pointer = plugin.get()](const auto& call, auto result) {
         plugin_pointer->HandleMethodCall(call, std::move(result));
       });
 
@@ -38,22 +48,27 @@ FlutterMapboxNavigationPlugin::FlutterMapboxNavigationPlugin() {}
 FlutterMapboxNavigationPlugin::~FlutterMapboxNavigationPlugin() {}
 
 void FlutterMapboxNavigationPlugin::HandleMethodCall(
-    const flutter::MethodCall<flutter::EncodableValue> &method_call,
+    const flutter::MethodCall<flutter::EncodableValue>& method_call,
     std::unique_ptr<flutter::MethodResult<flutter::EncodableValue>> result) {
   if (method_call.method_name().compare("getPlatformVersion") == 0) {
-    std::ostringstream version_stream;
-    version_stream << "Windows ";
-    if (IsWindows10OrGreater()) {
-      version_stream << "10+";
-    } else if (IsWindows8OrGreater()) {
-      version_stream << "8";
-    } else if (IsWindows7OrGreater()) {
-      version_stream << "7";
-    }
-    result->Success(flutter::EncodableValue(version_stream.str()));
+    std::string version = "Windows ";
+    OSVERSIONINFO osvi;
+    ZeroMemory(&osvi, sizeof(OSVERSIONINFO));
+    osvi.dwOSVersionInfoSize = sizeof(OSVERSIONINFO);
+    GetVersionEx(&osvi);
+    version += std::to_string(osvi.dwMajorVersion) + "." + 
+               std::to_string(osvi.dwMinorVersion);
+    result->Success(flutter::EncodableValue(version));
   } else {
     result->NotImplemented();
   }
 }
 
-}  // namespace flutter_mapbox_navigation
+}  // namespace
+
+void FlutterMapboxNavigationPluginRegisterWithRegistrar(
+    FlutterDesktopPluginRegistrarRef registrar) {
+  FlutterMapboxNavigationPlugin::RegisterWithRegistrar(
+      flutter::PluginRegistrarManager::GetInstance()
+          ->GetRegistrar<flutter::PluginRegistrarWindows>(registrar));
+}

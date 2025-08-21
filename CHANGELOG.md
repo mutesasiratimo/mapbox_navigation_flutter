@@ -1,3 +1,31 @@
+## 0.3.0
+* **Major Update**: Modernized plugin for Flutter 3.x and latest platform versions
+* **Breaking Changes**: 
+  - Updated Flutter SDK constraint to >=3.0.0 <4.0.0
+  - Updated minimum Flutter version to >=3.10.0
+  - Updated Android minimum SDK to 23 (Android 6.0)
+  - Updated iOS minimum deployment target to 16.0
+  - Updated macOS minimum deployment target to 10.15
+* **Android Updates**:
+  - Updated Android Gradle Plugin to 8.2.2
+  - Updated Kotlin to 1.9.22
+  - Updated compileSdk and targetSdk to 34
+  - Updated Java compatibility to 17
+  - Updated Mapbox Navigation SDK to 3.0.0
+  - Updated all Android dependencies to latest versions
+  - Converted NavigationLauncher from Java to Kotlin (modern Android standard)
+* **iOS Updates**:
+  - Updated Mapbox Navigation SDK to ~> 3.0
+  - Updated iOS deployment target to 16.0
+* **macOS Updates**:
+  - Updated Mapbox Navigation SDK to ~> 3.0
+  - Updated macOS deployment target to 10.15
+* **Dependencies Updates**:
+  - Updated plugin_platform_interface to ^2.1.8
+  - Updated flutter_lints to ^3.0.0
+  - Updated cupertino_icons to ^1.0.6
+* **Platform Support**: Enabled all platforms (Android, iOS, Linux, macOS, Windows, Web)
+
 ## 0.2.2
 * Fix issue with voice units in Android
 * Fix BannerText, VoiceInstruction and Off Route Events

@@ -1,29 +1,87 @@
-// In order to *not* need this ignore, consider extracting the "web" version
-// of your plugin as a separate package, instead of inlining it in the same
-// package as the core of your plugin.
-// ignore: avoid_web_libraries_in_flutter
-// ignore_for_file: public_member_api_docs
+import 'dart:async';
+import 'dart:html' as html;
 
-// ignore: avoid_web_libraries_in_flutter
-import 'dart:html' as html show window;
-
-import 'package:flutter_mapbox_navigation/src/flutter_mapbox_navigation_platform_interface.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 
-/// A web implementation of the FlutterMapboxNavigationPlatform of the
-/// FlutterMapboxNavigation plugin.
-class FlutterMapboxNavigationWeb extends FlutterMapboxNavigationPlatform {
-  /// Constructs a FlutterMapboxNavigationWeb
-  FlutterMapboxNavigationWeb();
+import 'flutter_mapbox_navigation_platform_interface.dart';
+import 'models/models.dart';
 
+/// A web implementation of the FlutterMapboxNavigationPlatform.
+class FlutterMapboxNavigationWeb extends FlutterMapboxNavigationPlatform {
   static void registerWith(Registrar registrar) {
     FlutterMapboxNavigationPlatform.instance = FlutterMapboxNavigationWeb();
   }
 
-  /// Returns a [String] containing the version of the platform.
   @override
   Future<String?> getPlatformVersion() async {
     final version = html.window.navigator.userAgent;
     return version;
+  }
+
+  @override
+  Future<double?> getDistanceRemaining() async {
+    // Web implementation - return null as navigation is not supported on web
+    return null;
+  }
+
+  @override
+  Future<double?> getDurationRemaining() async {
+    // Web implementation - return null as navigation is not supported on web
+    return null;
+  }
+
+  @override
+  Future<bool?> startFreeDrive(MapBoxOptions options) async {
+    // Web implementation - free drive is not supported on web
+    return false;
+  }
+
+  @override
+  Future<bool?> startNavigation(
+    List<WayPoint> wayPoints,
+    MapBoxOptions options,
+  ) async {
+    // Web implementation - navigation is not supported on web
+    // Could potentially open Mapbox web navigation in a new tab
+    if (wayPoints.isNotEmpty) {
+      final destination = wayPoints.last;
+      final origin = wayPoints.first;
+
+      // Open Mapbox web navigation
+      final url = 'https://www.mapbox.com/directions/driving/'
+          '${origin.latitude},${origin.longitude};'
+          '${destination.latitude},${destination.longitude}';
+
+      html.window.open(url, '_blank');
+      return true;
+    }
+    return false;
+  }
+
+  @override
+  Future<dynamic> addWayPoints({required List<WayPoint> wayPoints}) async {
+    // Web implementation - not supported
+    return false;
+  }
+
+  @override
+  Future<bool?> finishNavigation() async {
+    // Web implementation - not supported
+    return false;
+  }
+
+  @override
+  Future<bool?> enableOfflineRouting() async {
+    // Web implementation - offline routing is not supported on web
+    return false;
+  }
+
+  @override
+  Future<dynamic> registerRouteEventListener(
+    ValueSetter<RouteEvent> listener,
+  ) async {
+    // Web implementation - no events to register
+    return null;
   }
 }

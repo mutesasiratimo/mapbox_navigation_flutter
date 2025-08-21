@@ -4,20 +4,22 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'flutter_mapbox_navigation'
-  s.version          = '0.0.1'
+  s.version          = '0.3.0'
   s.summary          = 'Add Turn By Turn Navigation to Your Flutter Application Using MapBox. Never leave your app when you need to navigate your users to a location.'
   s.description      = <<-DESC
 Add Turn By Turn Navigation to Your Flutter Application Using MapBox. Never leave your app when you need to navigate your users to a location.
                        DESC
-  s.homepage         = 'http://example.com'
+  s.homepage         = 'https://mutesasira.dev'
   s.license          = { :file => '../LICENSE' }
-  s.author           = { 'Your Company' => 'email@example.com' }
-
+  s.author           = { 'Timothy Mutesasira' => 'mutestimo72@gmail.com' }
   s.source           = { :path => '.' }
-  s.source_files     = 'Classes/**/*'
-  s.dependency 'FlutterMacOS'
+  s.source_files = 'Classes/**/*'
+  s.dependency 'Flutter'
+  s.dependency 'MapboxCoreNavigation', '~> 3.0'
+  s.dependency 'MapboxNavigation', '~> 3.0'
+  s.platform = :osx, '10.15'
 
-  s.platform = :osx, '10.11'
+  # Flutter.framework does not contain a i386 slice.
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES' }
   s.swift_version = '5.0'
 end
