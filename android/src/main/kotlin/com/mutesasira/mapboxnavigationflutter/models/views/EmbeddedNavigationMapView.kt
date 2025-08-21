@@ -32,8 +32,8 @@ class EmbeddedNavigationMapView(
     private val arguments = args as Map<*, *>
 
     override fun initFlutterChannelHandlers() {
-        methodChannel = MethodChannel(messenger, "flutter_mapbox_navigation/${viewId}")
-        eventChannel = EventChannel(messenger, "flutter_mapbox_navigation/${viewId}/events")
+        methodChannel = MethodChannel(messenger, "mapbox_navigation_flutter/${viewId}")
+        eventChannel = EventChannel(messenger, "mapbox_navigation_flutter/${viewId}/events")
         super.initFlutterChannelHandlers()
     }
 

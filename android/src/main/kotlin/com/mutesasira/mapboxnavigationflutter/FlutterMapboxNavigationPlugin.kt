@@ -32,10 +32,10 @@ class FlutterMapboxNavigationPlugin : FlutterPlugin, MethodCallHandler,
 
     override fun onAttachedToEngine(binding: FlutterPlugin.FlutterPluginBinding) {
         val messenger = binding.binaryMessenger
-        channel = MethodChannel(messenger, "flutter_mapbox_navigation")
+        channel = MethodChannel(messenger, "mapbox_navigation_flutter")
         channel.setMethodCallHandler(this)
 
-        progressEventChannel = EventChannel(messenger, "flutter_mapbox_navigation/events")
+        progressEventChannel = EventChannel(messenger, "mapbox_navigation_flutter/events")
         progressEventChannel.setStreamHandler(this)
 
         platformViewRegistry = binding.platformViewRegistry
