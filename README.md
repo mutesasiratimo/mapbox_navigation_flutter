@@ -15,6 +15,8 @@ Add Turn By Turn Navigation to Your Flutter Application Using MapBox. Never leav
 
 ## IOS Configuration
 
+> **⚠️ iOS Compatibility Note:** There are known Swift compiler compatibility issues with newer versions of Mapbox SDK. The plugin currently uses Mapbox SDK 2.11.0 which should work with most iOS projects. If you encounter Swift compiler errors, you may need to adjust your iOS deployment target or use a different Mapbox SDK version.
+
 1. Go to your [Mapbox account dashboard](https://account.mapbox.com/) and create an access token that has the `DOWNLOADS:READ` scope. **PLEASE NOTE: This is not the same as your production Mapbox API token. Make sure to keep it private and do not insert it into any Info.plist file.** Create a file named `.netrc` in your home directory if it doesn’t already exist, then add the following lines to the end of the file:
    ```
    machine api.mapbox.com

@@ -1,9 +1,9 @@
 PODS:
   - Flutter (1.0.0)
-  - flutter_mapbox_navigation (0.2.0):
+  - mapbox_navigation_flutter (0.3.0):
     - Flutter
-    - MapboxCoreNavigation (~> 2.11)
-    - MapboxNavigation (~> 2.11)
+    - MapboxCoreNavigation (~> 2.11.0)
+    - MapboxNavigation (~> 2.11.0)
   - MapboxCommon (23.3.2)
   - MapboxCoreMaps (10.11.1):
     - MapboxCommon (~> 23.3)
@@ -35,7 +35,7 @@ PODS:
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
-  - flutter_mapbox_navigation (from `.symlinks/plugins/flutter_mapbox_navigation/ios`)
+  - mapbox_navigation_flutter (from `.symlinks/plugins/mapbox_navigation_flutter/ios`)
 
 SPEC REPOS:
   trunk:
@@ -55,12 +55,12 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   Flutter:
     :path: Flutter
-  flutter_mapbox_navigation:
-    :path: ".symlinks/plugins/flutter_mapbox_navigation/ios"
+  mapbox_navigation_flutter:
+    :path: ".symlinks/plugins/mapbox_navigation_flutter/ios"
 
 SPEC CHECKSUMS:
-  Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
-  flutter_mapbox_navigation: 043dae117609883f693f08bdc283796eefb0de32
+  Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
+  mapbox_navigation_flutter: 268fdada65fde51daadfa324715d140dd7e86eee
   MapboxCommon: c3a35f6884b80d898de9f11d88cb28c5caba584a
   MapboxCoreMaps: 03e7214fabb54d496ff56314ff8159dd264b6093
   MapboxCoreNavigation: 47937ebb39aab509987daa73d94e7cae144b9082
@@ -74,6 +74,6 @@ SPEC CHECKSUMS:
   Solar-dev: 4612dc9878b9fed2667d23b327f1d4e54e16e8d0
   Turf: 469ce2c3d22e5e8e4818d5a3b254699a5c89efa4
 
-PODFILE CHECKSUM: 4e8f8b2be68aeea4c0d5beb6ff1e79fface1d048
+PODFILE CHECKSUM: cc1f88378b4bfcf93a6ce00d2c587857c6008d3b
 
-COCOAPODS: 1.12.1
+COCOAPODS: 1.16.2
