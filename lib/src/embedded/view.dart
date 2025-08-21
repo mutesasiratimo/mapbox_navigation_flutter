@@ -40,7 +40,7 @@ class MapBoxNavigationView extends StatelessWidget {
   final ValueSetter<RouteEvent>? onRouteEvent;
 
   /// View name
-  static const String viewType = 'FlutterMapboxNavigationView';
+  static const String viewType = 'MapboxNavigationFlutterView';
 
   @override
   Widget build(BuildContext context) {
@@ -73,7 +73,7 @@ class MapBoxNavigationView extends StatelessWidget {
       );
     } else if (Platform.isIOS) {
       return UiKitView(
-        viewType: 'FlutterMapboxNavigationView',
+        viewType: 'MapboxNavigationFlutterView',
         onPlatformViewCreated: _onPlatformViewCreated,
         creationParams: options!.toMap(),
         creationParamsCodec: _decoder,

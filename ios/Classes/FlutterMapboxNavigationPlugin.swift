@@ -7,15 +7,15 @@ import MapboxNavigation
 
 public class FlutterMapboxNavigationPlugin: NavigationFactory, FlutterPlugin {
   public static func register(with registrar: FlutterPluginRegistrar) {
-    let channel = FlutterMethodChannel(name: "flutter_mapbox_navigation", binaryMessenger: registrar.messenger())
-    let eventChannel = FlutterEventChannel(name: "flutter_mapbox_navigation/events", binaryMessenger: registrar.messenger())
+    let channel = FlutterMethodChannel(name: "mapbox_navigation_flutter", binaryMessenger: registrar.messenger())
+    let eventChannel = FlutterEventChannel(name: "mapbox_navigation_flutter/events", binaryMessenger: registrar.messenger())
     let instance = FlutterMapboxNavigationPlugin()
     registrar.addMethodCallDelegate(instance, channel: channel)
 
     eventChannel.setStreamHandler(instance)
 
     let viewFactory = FlutterMapboxNavigationViewFactory(messenger: registrar.messenger())
-    registrar.register(viewFactory, withId: "FlutterMapboxNavigationView")
+    registrar.register(viewFactory, withId: "MapboxNavigationFlutterView")
 
   }
 

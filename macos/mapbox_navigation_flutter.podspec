@@ -15,11 +15,16 @@ Add Turn By Turn Navigation to Your Flutter Application Using MapBox. Never leav
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
   s.dependency 'Flutter'
-  s.dependency 'MapboxCoreNavigation', '1.2.0'
-  s.dependency 'MapboxNavigation', '1.2.0'
+  s.dependency 'MapboxCoreNavigation', '2.18.6'
+  s.dependency 'MapboxNavigation', '2.18.6'
   s.platform = :osx, '10.15'
 
   # Flutter.framework does not contain a i386 slice.
-  s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES' }
+  s.pod_target_xcconfig = {
+    'DEFINES_MODULE' => 'YES',
+    'EXCLUDED_ARCHS[sdk=macosx*]' => 'i386',
+    'SWIFT_VERSION' => '5.0',
+    'CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER' => 'NO'
+  }
   s.swift_version = '5.0'
 end

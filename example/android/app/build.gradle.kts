@@ -38,7 +38,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.mutesasira.fluttermapboxnavigationexample"
+        applicationId = "com.mutesasira.mapboxnavigationflutterexample"
         minSdk = 23
         targetSdk = 34
         versionCode = flutterVersionCode.toInt()
@@ -55,7 +55,7 @@ android {
         disable += "InvalidPackage"
     }
     
-    namespace = "com.mutesasira.fluttermapboxnavigationexample"
+    namespace = "com.mutesasira.mapboxnavigationflutterexample"
 }
 
 flutter {
