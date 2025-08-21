@@ -147,6 +147,15 @@ class MainActivity: FlutterFragmentActivity() {
       }
 ```
 
+## iOS Configuration
+
+To add your Mapbox access token to the iOS Info.plist file, you can include it as follows:
+
+```xml
+<key>MBXAccessToken</key>
+<string>sk.eyXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</string>
+```
+
 #### Begin Navigating
 
 ```dart
