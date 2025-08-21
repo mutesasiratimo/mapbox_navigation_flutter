@@ -15,7 +15,7 @@ Add Turn By Turn Navigation to Your Flutter Application Using MapBox. Never leav
 
 ## IOS Configuration
 
-> **⚠️ iOS Compatibility Note:** There are known Swift compiler compatibility issues with newer versions of Mapbox SDK. The plugin currently uses Mapbox SDK 2.11.0 which should work with most iOS projects. If you encounter Swift compiler errors, you may need to adjust your iOS deployment target or use a different Mapbox SDK version.
+> **⚠️ iOS Compatibility Note:** There are known Swift compiler compatibility issues with newer versions of Mapbox SDK. The plugin currently uses Mapbox SDK 2.3.2 which should work with most iOS projects. If you encounter Swift compiler errors related to 'Expression' type ambiguity, please see the [iOS Troubleshooting](#ios-troubleshooting) section below.
 
 1. Go to your [Mapbox account dashboard](https://account.mapbox.com/) and create an access token that has the `DOWNLOADS:READ` scope. **PLEASE NOTE: This is not the same as your production Mapbox API token. Make sure to keep it private and do not insert it into any Info.plist file.** Create a file named `.netrc` in your home directory if it doesn’t already exist, then add the following lines to the end of the file:
    ```
@@ -224,6 +224,58 @@ Add the following to your `info.plist` file
 ![Navigation View](screenshots/screenshot3.png?raw=true "Embedded iOS View") | ![Navigation View](screenshots/screenshot4.png?raw=true "Embedded Android View")
 |:---:|:---:|
 | Embedded iOS View | Embedded Android View |
+
+## iOS Troubleshooting
+
+### Swift Compiler Errors
+
+If you encounter Swift compiler errors like:
+```
+Swift Compiler Error (Xcode): 'Expression' is ambiguous for type lookup in this context
+```
+
+This is a known issue with newer Mapbox SDK versions. Here are the solutions:
+
+#### Solution 1: Use a Compatible Mapbox SDK Version
+The plugin uses Mapbox SDK 2.3.2 by default. If you need to use a different version, you can override it in your `ios/Podfile`:
+
+```ruby
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    if target.name.include?('MapboxNavigation') || target.name.include?('MapboxMaps')
+      target.build_configurations.each do |config|
+        config.build_settings['SWIFT_TREAT_WARNINGS_AS_ERRORS'] = 'NO'
+        config.build_settings['GCC_TREAT_WARNINGS_AS_ERRORS'] = 'NO'
+        config.build_settings['SWIFT_SUPPRESS_WARNINGS'] = 'YES'
+      end
+    end
+  end
+end
+```
+
+#### Solution 2: Update iOS Deployment Target
+Ensure your iOS deployment target is set to iOS 12.0 or higher:
+
+```ruby
+platform :ios, '12.0'
+```
+
+#### Solution 3: Clean and Rebuild
+```bash
+cd ios
+rm -rf Pods Podfile.lock
+pod install
+cd ..
+flutter clean
+flutter pub get
+flutter build ios
+```
+
+### Common Issues
+
+1. **Mapbox Access Token**: Ensure you have set up your Mapbox access token correctly
+2. **CocoaPods Installation**: Make sure CocoaPods is properly installed and updated
+3. **Xcode Version**: Use Xcode 12.0 or higher for best compatibility
 
 ## To Do
 * [DONE] Android Implementation

@@ -2,36 +2,36 @@ PODS:
   - Flutter (1.0.0)
   - mapbox_navigation_flutter (0.3.0):
     - Flutter
-    - MapboxCoreNavigation (~> 2.11.0)
-    - MapboxNavigation (~> 2.11.0)
-  - MapboxCommon (23.3.2)
-  - MapboxCoreMaps (10.11.1):
-    - MapboxCommon (~> 23.3)
-  - MapboxCoreNavigation (2.11.0):
-    - MapboxDirections (~> 2.10.0)
+    - MapboxCoreNavigation (= 2.3.2)
+    - MapboxNavigation (= 2.3.2)
+  - MapboxCommon (21.3.0)
+  - MapboxCoreMaps (10.5.3):
+    - MapboxCommon (~> 21.3)
+  - MapboxCoreNavigation (2.3.2):
+    - MapboxDirections (~> 2.4)
     - MapboxMobileEvents (~> 1.0)
-    - MapboxNavigationNative (~> 126.0.1)
-  - MapboxDirections (2.10.0):
+    - MapboxNavigationNative (~> 88.0)
+  - MapboxDirections (2.14.2):
     - Polyline (~> 5.0)
-    - Turf (~> 2.6.1)
-  - MapboxMaps (10.11.1):
-    - MapboxCommon (= 23.3.2)
-    - MapboxCoreMaps (= 10.11.1)
-    - MapboxMobileEvents (= 1.0.10)
+    - Turf (~> 2.8.0)
+  - MapboxMaps (10.5.1):
+    - MapboxCommon (= 21.3.0)
+    - MapboxCoreMaps (= 10.5.3)
+    - MapboxMobileEvents (= 1.0.7)
     - Turf (~> 2.0)
-  - MapboxMobileEvents (1.0.10)
-  - MapboxNavigation (2.11.0):
-    - MapboxCoreNavigation (= 2.11.0)
-    - MapboxMaps (~> 10.11.1)
+  - MapboxMobileEvents (1.0.7)
+  - MapboxNavigation (2.3.2):
+    - MapboxCoreNavigation (= 2.3.2)
+    - MapboxMaps (~> 10.3)
     - MapboxMobileEvents (~> 1.0)
     - MapboxSpeech (~> 2.0)
     - Solar-dev (~> 3.0)
-  - MapboxNavigationNative (126.0.3):
-    - MapboxCommon (~> 23.3)
+  - MapboxNavigationNative (88.0.0):
+    - MapboxCommon (~> 21.1)
   - MapboxSpeech (2.1.1)
   - Polyline (5.1.0)
   - Solar-dev (3.0.1)
-  - Turf (2.6.1)
+  - Turf (2.8.0)
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
@@ -60,20 +60,20 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
-  mapbox_navigation_flutter: 268fdada65fde51daadfa324715d140dd7e86eee
-  MapboxCommon: c3a35f6884b80d898de9f11d88cb28c5caba584a
-  MapboxCoreMaps: 03e7214fabb54d496ff56314ff8159dd264b6093
-  MapboxCoreNavigation: 47937ebb39aab509987daa73d94e7cae144b9082
-  MapboxDirections: a620d78a54312c392323ba211df8ae7dd9a28ab4
-  MapboxMaps: 85610575a8871b3f5e98be2a234f0229a33324a7
-  MapboxMobileEvents: de50b3a4de180dd129c326e09cd12c8adaaa46d6
-  MapboxNavigation: 8c4a3f75a4a57a837471af2034d53d24be83f9a5
-  MapboxNavigationNative: 56d91300b3d7a3697c700941b33c315a9a301716
+  mapbox_navigation_flutter: 7a411e3e1eb982c5e9a5dd6b76b8455041ceb395
+  MapboxCommon: a336e40b53e3fda5c419fe093c9c40aff4f4dd2b
+  MapboxCoreMaps: 259135c413370d63e998b6eb4acf888b5f292cc1
+  MapboxCoreNavigation: 793f4c72a0b5c058f0b8a9fdd16204e08bc1c7aa
+  MapboxDirections: d4fe7d43cff82aa0c15955d1b4563a5a01e2d4de
+  MapboxMaps: 7668203e0b731c6d5e31d982f3bd4bb245950061
+  MapboxMobileEvents: f7f3e8daeb4b83688ae62a4172dce79169a97233
+  MapboxNavigation: ffe01bcc723d0773afa42cc0eae5c8562aa303fc
+  MapboxNavigationNative: 7c588083547b121cf154402560364059aa5271e9
   MapboxSpeech: cd25ef99c3a3d2e0da72620ff558276ea5991a77
   Polyline: 2a1f29f87f8d9b7de868940f4f76deb8c678a5b1
   Solar-dev: 4612dc9878b9fed2667d23b327f1d4e54e16e8d0
-  Turf: 469ce2c3d22e5e8e4818d5a3b254699a5c89efa4
+  Turf: aa2ede4298009639d10db36aba1a7ebaad072a5e
 
-PODFILE CHECKSUM: cc1f88378b4bfcf93a6ce00d2c587857c6008d3b
+PODFILE CHECKSUM: 0934f3862ddcfb4d76a5578e52ccf7c27d1f5e35
 
 COCOAPODS: 1.16.2
