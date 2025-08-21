@@ -1,23 +1,26 @@
 # IDE files
 *.iml
-.idea/
 .vscode/
+.idea/
 
-# Build files
-build/
-.dart_tool/
-.packages
-
-# Platform-specific files that shouldn't be published
+# Gradle files
 example/android/gradle.properties
+
+# Lock files
 example/pubspec.lock
 
-# Mapbox access tokens (security)
-**/res/values/strings.xml
-**/res/values/mapbox_access_token.xml
+# Build artifacts
+build/
+.dart_tool/
+*.lock
 
-# Test files that shouldn't be in the published package
-test/
+# OS files
+.DS_Store
+Thumbs.db
 
-# Documentation files that are for development only
-UPGRADE_SUMMARY.md
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
