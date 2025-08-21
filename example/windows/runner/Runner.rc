@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.mutesasira" "\0"
-            VALUE "FileDescription", "flutter_mapbox_navigation_example" "\0"
+            VALUE "FileDescription", "mapbox_navigation_flutter_example" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "flutter_mapbox_navigation_example" "\0"
+            VALUE "InternalName", "mapbox_navigation_flutter_example" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2023 com.mutesasira. All rights reserved." "\0"
-            VALUE "OriginalFilename", "flutter_mapbox_navigation_example.exe" "\0"
-            VALUE "ProductName", "flutter_mapbox_navigation_example" "\0"
+            VALUE "OriginalFilename", "mapbox_navigation_flutter_example.exe" "\0"
+            VALUE "ProductName", "mapbox_navigation_flutter_example" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

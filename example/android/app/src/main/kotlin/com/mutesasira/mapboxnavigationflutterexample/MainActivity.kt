@@ -1,4 +1,4 @@
-package com.mutesasira.flutter_mapbox_navigation_example
+package com.mutesasira.mapboxnavigationflutterexample
 
 import io.flutter.embedding.android.FlutterFragmentActivity
 
