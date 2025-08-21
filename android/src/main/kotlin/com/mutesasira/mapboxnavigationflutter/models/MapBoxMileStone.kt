@@ -1,4 +1,4 @@
-package com.mutesasira.fluttermapboxnavigation.models
+package com.mutesasira.mapboxnavigationflutter.models
 
 data class MapBoxMileStone(
     var identifier: Int?,

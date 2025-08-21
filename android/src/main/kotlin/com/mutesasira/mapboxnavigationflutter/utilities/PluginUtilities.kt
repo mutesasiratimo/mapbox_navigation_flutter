@@ -1,13 +1,13 @@
-package com.mutesasira.fluttermapboxnavigation.utilities
+package com.mutesasira.mapboxnavigationflutter.utilities
 
 import android.app.Activity
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Build
-import com.mutesasira.fluttermapboxnavigation.FlutterMapboxNavigationPlugin
-import com.mutesasira.fluttermapboxnavigation.models.MapBoxEvents
-import com.mutesasira.fluttermapboxnavigation.models.MapBoxRouteProgressEvent
+import com.mutesasira.mapboxnavigationflutter.FlutterMapboxNavigationPlugin
+import com.mutesasira.mapboxnavigationflutter.models.MapBoxEvents
+import com.mutesasira.mapboxnavigationflutter.models.MapBoxRouteProgressEvent
 import io.flutter.plugin.common.MethodCall
 import java.io.ByteArrayInputStream
 import java.io.InputStream

@@ -1,4 +1,4 @@
-package com.mutesasira.fluttermapboxnavigation
+package com.mutesasira.mapboxnavigationflutter
 
 import android.annotation.SuppressLint
 import android.app.Activity
@@ -8,13 +8,13 @@ import android.location.Location
 import android.os.Bundle
 import android.util.Log
 import androidx.lifecycle.LifecycleOwner
-import com.mutesasira.fluttermapboxnavigation.databinding.NavigationActivityBinding
-import com.mutesasira.fluttermapboxnavigation.models.MapBoxEvents
-import com.mutesasira.fluttermapboxnavigation.models.MapBoxRouteProgressEvent
-import com.mutesasira.fluttermapboxnavigation.models.Waypoint
-import com.mutesasira.fluttermapboxnavigation.models.WaypointSet
-import com.mutesasira.fluttermapboxnavigation.utilities.CustomInfoPanelEndNavButtonBinder
-import com.mutesasira.fluttermapboxnavigation.utilities.PluginUtilities
+import com.mutesasira.mapboxnavigationflutter.databinding.NavigationActivityBinding
+import com.mutesasira.mapboxnavigationflutter.models.MapBoxEvents
+import com.mutesasira.mapboxnavigationflutter.models.MapBoxRouteProgressEvent
+import com.mutesasira.mapboxnavigationflutter.models.Waypoint
+import com.mutesasira.mapboxnavigationflutter.models.WaypointSet
+import com.mutesasira.mapboxnavigationflutter.utilities.CustomInfoPanelEndNavButtonBinder
+import com.mutesasira.mapboxnavigationflutter.utilities.PluginUtilities
 import com.google.gson.Gson
 import com.mapbox.maps.Style
 import com.mapbox.api.directions.v5.DirectionsCriteria

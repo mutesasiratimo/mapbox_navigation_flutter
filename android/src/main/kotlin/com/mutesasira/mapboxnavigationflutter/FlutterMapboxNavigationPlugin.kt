@@ -1,13 +1,13 @@
-package com.mutesasira.fluttermapboxnavigation
+package com.mutesasira.mapboxnavigationflutter
 
 import android.Manifest
 import android.app.Activity
 import android.content.Context
 import android.content.pm.PackageManager
 import android.os.Build
-import com.mutesasira.fluttermapboxnavigation.activity.NavigationLauncher
-import com.mutesasira.fluttermapboxnavigation.factory.EmbeddedNavigationViewFactory
-import com.mutesasira.fluttermapboxnavigation.models.Waypoint
+import com.mutesasira.mapboxnavigationflutter.activity.NavigationLauncher
+import com.mutesasira.mapboxnavigationflutter.factory.EmbeddedNavigationViewFactory
+import com.mutesasira.mapboxnavigationflutter.models.Waypoint
 import com.mapbox.api.directions.v5.DirectionsCriteria
 import com.mapbox.api.directions.v5.models.DirectionsRoute
 import io.flutter.embedding.engine.plugins.FlutterPlugin

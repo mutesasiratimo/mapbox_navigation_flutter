@@ -1,4 +1,4 @@
-package com.mutesasira.fluttermapboxnavigation.models
+package com.mutesasira.mapboxnavigationflutter.models
 
 import com.mapbox.api.directions.v5.models.RouteOptions
 import com.mapbox.geojson.Point

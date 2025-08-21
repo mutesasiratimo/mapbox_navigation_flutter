@@ -1,4 +1,4 @@
-package com.mutesasira.fluttermapboxnavigation.models
+package com.mutesasira.mapboxnavigationflutter.models
 
 enum class MapBoxEvents(val value: String) {
     MAP_READY("map_ready"),

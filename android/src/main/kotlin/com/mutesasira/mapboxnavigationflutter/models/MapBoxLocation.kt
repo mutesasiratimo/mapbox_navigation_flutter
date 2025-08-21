@@ -1,4 +1,4 @@
-package com.mutesasira.fluttermapboxnavigation.models
+package com.mutesasira.mapboxnavigationflutter.models
 
 class MapBoxLocation(val name: String = "", private val latitude: Double?, private val longitude: Double?) {
     override fun toString(): String {

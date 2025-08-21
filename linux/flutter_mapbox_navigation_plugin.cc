@@ -31,6 +31,22 @@ static void flutter_mapbox_navigation_plugin_handle_method_call(
     g_autofree gchar *version = g_strdup_printf("Linux %s", uname_data.release);
     g_autoptr(FlValue) result = fl_value_new_string(version);
     response = FL_METHOD_RESPONSE(fl_method_success_response_new(result));
+  } else if (strcmp(method, "getDistanceRemaining") == 0) {
+    response = FL_METHOD_RESPONSE(fl_method_success_response_new(fl_value_new_null()));
+  } else if (strcmp(method, "getDurationRemaining") == 0) {
+    response = FL_METHOD_RESPONSE(fl_method_success_response_new(fl_value_new_null()));
+  } else if (strcmp(method, "startFreeDrive") == 0) {
+    response = FL_METHOD_RESPONSE(fl_method_success_response_new(fl_value_new_bool(false)));
+  } else if (strcmp(method, "startNavigation") == 0) {
+    response = FL_METHOD_RESPONSE(fl_method_success_response_new(fl_value_new_bool(false)));
+  } else if (strcmp(method, "addWayPoints") == 0) {
+    response = FL_METHOD_RESPONSE(fl_method_success_response_new(fl_value_new_bool(false)));
+  } else if (strcmp(method, "finishNavigation") == 0) {
+    response = FL_METHOD_RESPONSE(fl_method_success_response_new(fl_value_new_bool(false)));
+  } else if (strcmp(method, "enableOfflineRouting") == 0) {
+    response = FL_METHOD_RESPONSE(fl_method_success_response_new(fl_value_new_bool(false)));
+  } else if (strcmp(method, "registerRouteEventListener") == 0) {
+    response = FL_METHOD_RESPONSE(fl_method_success_response_new(fl_value_new_null()));
   } else {
     response = FL_METHOD_RESPONSE(fl_method_not_implemented_response_new());
   }
@@ -61,7 +77,7 @@ void flutter_mapbox_navigation_plugin_register_with_registrar(FlPluginRegistrar*
   g_autoptr(FlStandardMethodCodec) codec = fl_standard_method_codec_new();
   g_autoptr(FlMethodChannel) channel =
       fl_method_channel_new(fl_plugin_registrar_get_messenger(registrar),
-                           "flutter_mapbox_navigation",
+                           "mapbox_navigation_flutter",
                            FL_METHOD_CODEC(codec));
   fl_method_channel_set_method_call_handler(channel, method_call_cb,
                                           g_object_ref(plugin),

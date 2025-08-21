@@ -4,7 +4,7 @@ import 'dart:io';
 
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_mapbox_navigation/src/models/models.dart';
+import 'package:mapbox_navigation_flutter/src/models/models.dart';
 
 /// Controller for a single MapBox Navigation instance
 /// running on the host platform.
@@ -14,10 +14,10 @@ class MapBoxNavigationViewController {
     int id,
     ValueSetter<RouteEvent>? eventNotifier,
   ) {
-    _methodChannel = MethodChannel('flutter_mapbox_navigation/$id');
+    _methodChannel = MethodChannel('mapbox_navigation_flutter/$id');
     _methodChannel.setMethodCallHandler(_handleMethod);
 
-    _eventChannel = EventChannel('flutter_mapbox_navigation/$id/events');
+    _eventChannel = EventChannel('mapbox_navigation_flutter/$id/events');
     _routeEventNotifier = eventNotifier;
   }
 

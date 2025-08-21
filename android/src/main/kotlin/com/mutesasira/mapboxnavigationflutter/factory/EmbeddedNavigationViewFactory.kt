@@ -1,12 +1,12 @@
-package com.mutesasira.fluttermapboxnavigation.factory
+package com.mutesasira.mapboxnavigationflutter.factory
 
 import android.app.Activity
 import android.content.Context
 import android.view.LayoutInflater
-import com.mutesasira.fluttermapboxnavigation.R
-import com.mutesasira.fluttermapboxnavigation.databinding.NavigationActivityBinding
-import com.mutesasira.fluttermapboxnavigation.models.views.EmbeddedNavigationMapView
-import com.mutesasira.fluttermapboxnavigation.utilities.PluginUtilities
+import com.mutesasira.mapboxnavigationflutter.R
+import com.mutesasira.mapboxnavigationflutter.databinding.NavigationActivityBinding
+import com.mutesasira.mapboxnavigationflutter.models.views.EmbeddedNavigationMapView
+import com.mutesasira.mapboxnavigationflutter.utilities.PluginUtilities
 import io.flutter.plugin.common.BinaryMessenger
 import io.flutter.plugin.common.StandardMessageCodec
 import io.flutter.plugin.platform.PlatformView

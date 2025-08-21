@@ -1,4 +1,4 @@
-package com.mutesasira.fluttermapboxnavigation.models
+package com.mutesasira.mapboxnavigationflutter.models
 
 import com.google.gson.JsonObject
 import com.mapbox.api.directions.v5.models.LegStep

@@ -1,8 +1,8 @@
-package com.mutesasira.fluttermapboxnavigation.activity
+package com.mutesasira.mapboxnavigationflutter.activity
 
 import android.app.Activity
 import android.content.Intent
-import com.mutesasira.fluttermapboxnavigation.models.Waypoint
+import com.mutesasira.mapboxnavigationflutter.models.Waypoint
 
 object NavigationLauncher {
     const val KEY_ADD_WAYPOINTS = "com.my.mapbox.broadcast.ADD_WAYPOINTS"

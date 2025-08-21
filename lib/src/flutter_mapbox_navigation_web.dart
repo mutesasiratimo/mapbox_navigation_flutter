@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 
-import 'package:flutter_mapbox_navigation/src/flutter_mapbox_navigation_platform_interface.dart';
-import 'package:flutter_mapbox_navigation/src/models/models.dart';
+import 'package:mapbox_navigation_flutter/src/flutter_mapbox_navigation_platform_interface.dart';
+import 'package:mapbox_navigation_flutter/src/models/models.dart';
 
 /// A web implementation of the FlutterMapboxNavigationPlatform.
 ///

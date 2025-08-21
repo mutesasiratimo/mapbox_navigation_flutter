@@ -1,10 +1,11 @@
 import 'package:flutter/services.dart';
-import 'package:flutter_mapbox_navigation/src/flutter_mapbox_navigation_method_channel.dart';
 import 'package:flutter_test/flutter_test.dart';
+
+import 'package:mapbox_navigation_flutter/src/flutter_mapbox_navigation_method_channel.dart';
 
 void main() {
   final platform = MethodChannelFlutterMapboxNavigation();
-  const channel = MethodChannel('flutter_mapbox_navigation');
+  const channel = MethodChannel('mapbox_navigation_flutter');
 
   TestWidgetsFlutterBinding.ensureInitialized();
 

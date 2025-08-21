@@ -1,10 +1,9 @@
-name: flutter_mapbox_navigation
+name: mapbox_navigation_flutter
 description: >
   Add Turn By Turn Navigation to Your Flutter Application Using MapBox. 
   Never leave your app when you need to navigate your users to a location.
-version: 0.3.0
-homepage: "https://mutesasira.dev"
-repository: "https://github.com/mutesasira/flutter_mapbox_navigation"
+version: 0.1.1
+repository: "https://github.com/mutesasiratimo/mapbox_navigation_flutter"
 
 environment:
   sdk: '>=3.0.0 <4.0.0'
@@ -27,7 +26,7 @@ flutter:
   plugin:
     platforms:
       android:
-        package: com.mutesasira.fluttermapboxnavigation
+        package: com.mutesasira.mapboxnavigationflutter
         pluginClass: FlutterMapboxNavigationPlugin
       ios:
         pluginClass: FlutterMapboxNavigationPlugin

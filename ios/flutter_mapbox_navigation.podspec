@@ -3,7 +3,7 @@
 # Run `pod lib lint flutter_mapbox_navigation.podspec` to validate before publishing.
 #
 Pod::Spec.new do |s|
-  s.name             = 'flutter_mapbox_navigation'
+  s.name             = 'mapbox_navigation_flutter'
   s.version          = '0.3.0'
   s.summary          = 'Add Turn By Turn Navigation to Your Flutter Application Using MapBox. Never leave your app when you need to navigate your users to a location.'
   s.description      = <<-DESC

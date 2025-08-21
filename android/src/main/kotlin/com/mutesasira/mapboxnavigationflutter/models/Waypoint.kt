@@ -1,4 +1,4 @@
-package com.mutesasira.fluttermapboxnavigation.models
+package com.mutesasira.mapboxnavigationflutter.models
 
 import com.google.gson.annotations.SerializedName
 import com.mapbox.geojson.Point

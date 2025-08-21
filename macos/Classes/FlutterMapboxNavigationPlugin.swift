@@ -3,7 +3,7 @@ import Foundation
 
 public class FlutterMapboxNavigationPlugin: NSObject, FlutterPlugin {
   public static func register(with registrar: FlutterPluginRegistrar) {
-    let channel = FlutterMethodChannel(name: "flutter_mapbox_navigation", binaryMessenger: registrar.messenger())
+    let channel = FlutterMethodChannel(name: "mapbox_navigation_flutter", binaryMessenger: registrar.messenger())
     let instance = FlutterMapboxNavigationPlugin()
     registrar.addMethodCallDelegate(instance, channel: channel)
   }

@@ -1,8 +1,8 @@
 // ignore_for_file: public_member_api_docs
 
 import 'package:flutter/widgets.dart';
-import 'package:flutter_mapbox_navigation/src/models/navmode.dart';
-import 'package:flutter_mapbox_navigation/src/models/voice_units.dart';
+import 'package:mapbox_navigation_flutter/src/models/navmode.dart';
+import 'package:mapbox_navigation_flutter/src/models/voice_units.dart';
 
 /// Configuration options for the MapBoxNavigation.
 ///
@@ -10,7 +10,6 @@ import 'package:flutter_mapbox_navigation/src/models/voice_units.dart';
 /// 'do not change this configuration option'.
 ///
 class MapBoxOptions {
-
   MapBoxOptions({
     this.initialLatitude,
     this.initialLongitude,

@@ -5,8 +5,8 @@ import 'dart:io';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_mapbox_navigation/src/flutter_mapbox_navigation_platform_interface.dart';
-import 'package:flutter_mapbox_navigation/src/models/models.dart';
+import 'package:mapbox_navigation_flutter/src/flutter_mapbox_navigation_platform_interface.dart';
+import 'package:mapbox_navigation_flutter/src/models/models.dart';
 
 /// An implementation of [FlutterMapboxNavigationPlatform]
 /// that uses method channels.
@@ -14,11 +14,11 @@ class MethodChannelFlutterMapboxNavigation
     extends FlutterMapboxNavigationPlatform {
   /// The method channel used to interact with the native platform.
   @visibleForTesting
-  final methodChannel = const MethodChannel('flutter_mapbox_navigation');
+  final methodChannel = const MethodChannel('mapbox_navigation_flutter');
 
   /// The event channel used to interact with the native platform.
   @visibleForTesting
-  final eventChannel = const EventChannel('flutter_mapbox_navigation/events');
+  final eventChannel = const EventChannel('mapbox_navigation_flutter/events');
 
   late StreamSubscription<RouteEvent> _routeEventSubscription;
   late ValueSetter<RouteEvent>? _onRouteEvent;

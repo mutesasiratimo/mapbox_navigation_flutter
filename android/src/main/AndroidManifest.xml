@@ -5,7 +5,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application>
-        <activity android:name="com.mutesasira.fluttermapboxnavigation.activity.NavigationActivity" />
+        <activity android:name="com.mutesasira.mapboxnavigationflutter.activity.NavigationActivity" />
     </application>
 
 </manifest>

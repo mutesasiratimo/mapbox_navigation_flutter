@@ -3,7 +3,7 @@ plugins {
     id("kotlin-android")
 }
 
-group = "com.mutesasira.fluttermapboxnavigation"
+group = "com.mutesasira.mapboxnavigationflutter"
 version = "1.0-SNAPSHOT"
 
 allprojects {
@@ -28,7 +28,7 @@ allprojects {
 
 android {
     compileSdk = 34
-    namespace = "com.mutesasira.fluttermapboxnavigation"
+    namespace = "com.mutesasira.mapboxnavigationflutter"
 
     sourceSets {
         getByName("main").java.srcDirs("src/main/kotlin")

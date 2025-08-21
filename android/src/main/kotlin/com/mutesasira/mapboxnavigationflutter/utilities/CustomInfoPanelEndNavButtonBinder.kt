@@ -1,9 +1,9 @@
-package com.mutesasira.fluttermapboxnavigation.utilities
+package com.mutesasira.mapboxnavigationflutter.utilities
 
 import android.app.Activity
 import android.view.ViewGroup
-import com.mutesasira.fluttermapboxnavigation.activity.NavigationLauncher
-import com.mutesasira.fluttermapboxnavigation.models.MapBoxEvents
+import com.mutesasira.mapboxnavigationflutter.activity.NavigationLauncher
+import com.mutesasira.mapboxnavigationflutter.models.MapBoxEvents
 import com.mapbox.navigation.core.MapboxNavigation
 import com.mapbox.navigation.core.lifecycle.MapboxNavigationObserver
 import com.mapbox.navigation.dropin.R
@@ -12,11 +12,11 @@ import com.mapbox.navigation.ui.base.lifecycle.UIBinder
 import com.mapbox.navigation.ui.base.lifecycle.UIComponent
 import com.mapbox.navigation.ui.base.view.MapboxExtendableButton
 
-// package com.mutesasira.fluttermapboxnavigation.utilities
+// package com.mutesasira.mapboxnavigationflutter.utilities
 
 // import android.app.Activity
 // import android.view.ViewGroup
-// import com.mutesasira.fluttermapboxnavigation.models.MapBoxEvents
+// import com.mutesasira.mapboxnavigationflutter.models.MapBoxEvents
 // import com.mapbox.navigation.core.MapboxNavigation
 // import com.mapbox.navigation.core.lifecycle.MapboxNavigationObserver
 // import com.mapbox.navigation.ui.base.lifecycle.UIBinder

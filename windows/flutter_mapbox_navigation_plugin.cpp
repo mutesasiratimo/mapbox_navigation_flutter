@@ -30,7 +30,7 @@ void FlutterMapboxNavigationPlugin::RegisterWithRegistrar(
     flutter::PluginRegistrarWindows* registrar) {
   auto channel =
       std::make_unique<flutter::MethodChannel<flutter::EncodableValue>>(
-          registrar->messenger(), "flutter_mapbox_navigation",
+          registrar->messenger(), "mapbox_navigation_flutter",
           &flutter::StandardMethodCodec::GetInstance());
 
   auto plugin = std::make_unique<FlutterMapboxNavigationPlugin>();
@@ -59,6 +59,22 @@ void FlutterMapboxNavigationPlugin::HandleMethodCall(
     version += std::to_string(osvi.dwMajorVersion) + "." + 
                std::to_string(osvi.dwMinorVersion);
     result->Success(flutter::EncodableValue(version));
+  } else if (method_call.method_name().compare("getDistanceRemaining") == 0) {
+    result->Success(flutter::EncodableValue());
+  } else if (method_call.method_name().compare("getDurationRemaining") == 0) {
+    result->Success(flutter::EncodableValue());
+  } else if (method_call.method_name().compare("startFreeDrive") == 0) {
+    result->Success(flutter::EncodableValue(false));
+  } else if (method_call.method_name().compare("startNavigation") == 0) {
+    result->Success(flutter::EncodableValue(false));
+  } else if (method_call.method_name().compare("addWayPoints") == 0) {
+    result->Success(flutter::EncodableValue(false));
+  } else if (method_call.method_name().compare("finishNavigation") == 0) {
+    result->Success(flutter::EncodableValue(false));
+  } else if (method_call.method_name().compare("enableOfflineRouting") == 0) {
+    result->Success(flutter::EncodableValue(false));
+  } else if (method_call.method_name().compare("registerRouteEventListener") == 0) {
+    result->Success(flutter::EncodableValue());
   } else {
     result->NotImplemented();
   }

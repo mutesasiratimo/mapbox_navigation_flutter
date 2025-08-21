@@ -1,12 +1,12 @@
-package com.mutesasira.fluttermapboxnavigation.models.views
+package com.mutesasira.mapboxnavigationflutter.models.views
 
 import android.app.Activity
 import android.content.Context
 import android.view.View
-import com.mutesasira.fluttermapboxnavigation.TurnByTurn
-import com.mutesasira.fluttermapboxnavigation.databinding.NavigationActivityBinding
-import com.mutesasira.fluttermapboxnavigation.models.MapBoxEvents
-import com.mutesasira.fluttermapboxnavigation.utilities.PluginUtilities
+import com.mutesasira.mapboxnavigationflutter.TurnByTurn
+import com.mutesasira.mapboxnavigationflutter.databinding.NavigationActivityBinding
+import com.mutesasira.mapboxnavigationflutter.models.MapBoxEvents
+import com.mutesasira.mapboxnavigationflutter.utilities.PluginUtilities
 import com.mapbox.geojson.Point
 import com.mapbox.maps.MapView
 import com.mapbox.maps.plugin.gestures.OnMapClickListener
